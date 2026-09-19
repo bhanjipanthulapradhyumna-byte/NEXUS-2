@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <title>NEXUS</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div id="splash" class="splash" aria-label="NEXUS loading">
+    <div class="splash-core">
+      <img class="phoenix-logo large" src="/assets/phoenix.png" alt="NEXUS Phoenix logo">
+      <div class="splash-title">NEXUS</div>
+    </div>
+  </div>
+
+  <div id="app" class="app hidden">
+    <header class="topbar">
+      <button id="brand" class="brand" aria-label="Go to NEXUS chat">
+        <img class="phoenix-logo small" src="/assets/phoenix.png" alt="">
+        <span>Nexus</span>
+      </button>
+      <div class="top-actions">
+        <button id="profileBtn" class="icon-btn profile hidden" aria-label="Profile">◉</button>
+        <button id="privacyBtn" class="icon-btn hidden" aria-label="Privacy mode">◌</button>
+        <button id="loginBtn" class="login-btn">◉ <span>Login</span></button>
+        <button id="menuBtn" class="hamburger" aria-label="Open menu"><i></i><i></i><i></i></button>
+      </div>
+    </header>
+
+    <main id="main" class="main">
+      <section id="chatView" class="view chat-view">
+        <div class="hero">
+          <div id="heroTitle" class="hero-title">WELCOME TO NEXUS</div>
+          <div id="privacyLabel" class="privacy-label hidden">PRIVACY MODE</div>
+        </div>
+        <div class="composer-wrap">
+          <div id="chatMessages" class="messages" aria-live="polite"></div>
+          <div class="help-text">How can I help you today?</div>
+          <form id="composer" class="composer">
+            <input id="imageInput" type="file" accept="image/*" hidden>
+            <textarea id="chatInput" rows="1" placeholder="Begin a chat" aria-label="Chat message"></textarea>
+            <div class="composer-actions">
+              <button type="button" id="galleryBtn" class="round-btn" aria-label="Attach image">▧</button>
+              <button type="button" id="micBtn" class="round-btn" aria-label="Voice input">♩</button>
+              <button type="submit" class="send-btn" aria-label="Send message">→</button>
+            </div>
+          </form>
+          <div id="attachmentPreview" class="attachment hidden"></div>
+        </div>
+      </section>
+
+      <section id="settingsView" class="view settings-view hidden">
+        <div class="settings-head"><button class="back-btn" data-back>←</button><h1>Settings</h1></div>
+        <div class="settings-list">
+          <button class="setting-row" data-setting="personalize"><span>✦</span><b>Personalize</b><small>Accent, font and size</small></button>
+          <button class="setting-row" data-setting="appearance"><span>◐</span><b>Appearance</b><small>Dark, light or system</small></button>
+          <button class="setting-row" data-setting="general"><span>⚙</span><b>General</b><small>Chat, notifications, language and privacy</small></button>
+          <button class="setting-row" data-setting="about"><span>!</span><b>About</b><small>Version, terms and privacy</small></button>
+        </div>
+      </section>
+
+      <section id="helpView" class="view settings-view hidden">
+        <div class="settings-head"><button class="back-btn" data-back>←</button><h1>Help</h1></div>
+        <div class="info-panel"><h2>NEXUS Help</h2><p>Use the chat box to send a message. Gallery accepts images only. The microphone uses your browser's supported speech-recognition capability.</p></div>
+      </section>
+    </main>
+
+    <aside id="sidePanel" class="side-panel" aria-hidden="true">
+      <div class="panel-head"><span>NEXUS</span><button id="closeMenu" aria-label="Close menu">×</button></div>
+      <nav>
+        <button data-route="new"><span>＋</span>New conversation</button>
+        <button data-route="research"><span>⌁</span>Deep research</button>
+        <button data-route="finance"><span>◈</span>Finance</button>
+        <button data-route="problem"><span>?</span>Problem solving</button>
+        <button data-route="coding"><span>&lt;/&gt;</span>Coding</button>
+        <button data-route="analysis"><span>⌁</span>Analysis</button>
+      </nav>
+      <div class="panel-bottom">
+        <button data-route="settings"><span>⚙</span>Settings</button>
+        <button data-route="help"><span>!</span>Help</button>
+      </div>
+    </aside>
+    <div id="scrim" class="scrim"></div>
+  </div>
+
+  <div id="modalRoot"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
